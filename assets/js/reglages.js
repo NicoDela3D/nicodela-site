@@ -9,6 +9,6 @@ export const settings = {
   logoBurstRate: 12,
   logoFrenzyRate: 24,
   hoverScale: 1.1,
-  colWidth: 480,
+  colWidth: 720,
   captionEffect: "glisser",
 };
