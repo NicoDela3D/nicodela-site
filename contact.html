@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Nicolas Delacrétaz</title>
+<meta name="description" content="Contacter Nicolas Delacrétaz pour une question ou une demande d'offre.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Nicolas Delacrétaz">
+<meta property="og:description" content="Contacter Nicolas Delacrétaz pour une question ou une demande d'offre.">
+<meta property="og:url" content="https://nicodela.com/contact.html">
+<meta property="og:image" content="https://nicodela.com/img/full/001-vue-exterieure.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1500">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<!-- Réglages (tailles et durées) : généré par « build.py html », après site.css pour
+     que ses valeurs l'emportent. -->
+<link rel="stylesheet" href="assets/css/reglages.css">
+</head>
+<body>
+<header class="site-header">
+  <!-- Bloc de gauche : les deux liens, et sous eux la rangée des filtres. Tous deux ne font
+       qu'une seule case de la grille à trois colonnes — celle de gauche —, si bien que la rangée
+       des filtres se pose juste sous le trait du lien actif au lieu d'attendre le bas de la bande
+       du logo. Ce qui pend sous les liens fait grandir l'en-tête ; les liens, eux, ne bougent pas
+       (voir `.header-left`, feuille de style). Sur écran étroit, le bloc se dissout
+       (`display: contents`) et les deux liens reprennent chacun un côté du logo. -->
+  <div class="header-left">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="./" class="">Mon travail</a>
+      <a href="contact.html" class="is-active">Contact</a>
+      <!-- Trait du lien actif. Il vient après les deux liens : c'est une décoration, elle n'a
+           rien à dire à un lecteur d'écran, et `nav.js` lui donne la position et la largeur du
+           lien actif — au chargement, au redimensionnement et à chaque fois qu'il change. -->
+      <span class="nav-bar" aria-hidden="true"></span>
+      <!-- Sans JavaScript, le trait reste large de zéro : personne ne le dimensionne, et le lien
+           actif ne serait plus signalé du tout sur ordinateur (sur écran étroit, le soulignement
+           de texte est déjà de retour). On rend donc le soulignement d'origine et on retire le
+           trait, qui n'a plus rien à dire. -->
+      <noscript><style>.site-nav a.is-active { text-decoration: underline; text-underline-offset: 5px; } .nav-bar { display: none; }</style></noscript>
+    </nav>
+    <!-- Rangée des filtres, juste sous les deux liens : `build_html` ne la pose que sur
+         l'accueil, seule page qui ait une galerie à filtrer, et laisse le marqueur vide ailleurs.
+         Elle vient avec sa rangée de sous-étiquettes, repliée tant que « Image » n'est pas
+         choisi. -->
+    
+  </div>
+  <a href="./" class="site-logo" aria-label="Nicolas Delacrétaz, retour à l'accueil">
+    <img class="logo-fallback" src="assets/logo/logo-poster.png" data-gif="assets/logo/logo.gif" width="124" height="124" alt="">
+    <noscript><style>.logo-fallback[data-gif]{display:none}</style><img class="logo-fallback" src="assets/logo/logo.gif" width="124" height="124" alt=""></noscript>
+    <canvas id="logo" width="180" height="180" aria-hidden="true" hidden></canvas>
+  </a>
+</header>
+
+<main class="contact">
+  <h1>Contact</h1>
+  <div class="contact-body">
+    <p>Passez par le formulaire ci-dessous pour toute question ou demande d'offre.</p>
+    <p>Pour me transmettre des fichiers, vous pouvez passer directement par mon <a href="mailto:info@nicodela.com">email</a>.</p>
+
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-key="b94933cb-7bd0-41ba-9986-ee2c4ccb145d">
+  <input type="hidden" name="access_key" value="b94933cb-7bd0-41ba-9986-ee2c4ccb145d">
+  <input type="hidden" name="subject" value="Contact nicodela.com">
+  <input type="hidden" name="redirect" value="https://nicodela.com/merci.html">
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  <!-- Seuls l'adresse et le message sont exigés : un visiteur qui écrit depuis son adresse
+       professionnelle n'a rien d'autre à donner pour qu'on lui réponde. Les champs facultatifs ne
+       portent donc aucune marque — c'est « (obligatoire) » qui signale l'exception. -->
+  <!-- Un seul champ pour le nom, dans l'ordre où l'on se présente : « Nom / Prénom ». Deux
+       champs pour la même chose obligeaient à choisir où écrire — et la moitié des visiteurs
+       n'en remplissait qu'un. `autocomplete="name"` : le navigateur y verse le nom complet. -->
+  <label>Nom / Prénom
+    <input type="text" name="nom" autocomplete="name"></label>
+
+  <label>Entreprise
+    <input type="text" name="entreprise" autocomplete="organization"></label>
+
+  <label>E-mail <span class="req">(obligatoire)</span>
+    <input type="email" name="email" required autocomplete="email"></label>
+
+  <label>Téléphone
+    <input type="tel" name="telephone" autocomplete="tel"></label>
+
+  <!-- Quatre lignes pour commencer : le champ grandit ensuite avec ce qu'on y écrit
+       (`contact.js`), plutôt que de faire défiler un texte que l'on vient de taper. -->
+  <label>Message <span class="req">(obligatoire)</span>
+    <textarea name="message" rows="4" required></textarea></label>
+
+  <button type="submit" class="btn btn-submit">Envoyer</button>
+  <p class="form-error" hidden>L'envoi n'a pas abouti. Écrivez-moi directement à <a href="mailto:info@nicodela.com">info@nicodela.com</a>.</p>
+</form>
+<p class="form-success" hidden>Merci, votre message est envoyé. Je vous réponds rapidement.</p>
+
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Nicolas Delacrétaz</p>
+  <p>Place Grand-Saint-Jean 1</p>
+  <p>CH - 1003 Lausanne</p>
+</footer>
+
+<button class="to-top" type="button" aria-label="Remonter" hidden>↑</button>
+<!-- La barre du lien actif : posée avant les autres modules, pour qu'elle soit en place
+     dès que « Contact » ouvre sa carte sur l'accueil. -->
+<script type="module" src="assets/js/nav.js"></script>
+<script type="module" src="assets/js/logo.js"></script>
+<script type="module" src="assets/js/to-top.js"></script>
+<script type="module" src="assets/js/contact.js"></script>
+</body>
+</html>

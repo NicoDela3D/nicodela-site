@@ -1,0 +1,16 @@
+/* Fichier généré par « build.py html ». Ne pas modifier à la main : les valeurs
+   viennent de content/reglages.json (page http://localhost:8765/reglages). */
+:root {
+  --logo-size: 118px;
+  --header-h: 150px;
+  --font-size: 20px;
+  --zoom-duration: 650ms;
+  --flip-duration: 900ms;
+  --relayout-duration: 700ms;
+  --dim-duration: 300ms;
+  --hd-fade: 150ms;
+  --thumb-fade: 500ms;
+  --hover-ms: 300ms;
+  --hover-scale: 1.1;
+  --meta-duration: 500ms;
+}

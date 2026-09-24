@@ -1,0 +1,1 @@
+const i=/mac|iphone|ipad|ipod/i;function n({uaPlatform:o,platform:r,userAgent:e}={}){for(const t of[o,r,e])if(typeof t=="string"&&t.trim())return i.test(t)?"mac":"other";return"other"}export{n as osName};

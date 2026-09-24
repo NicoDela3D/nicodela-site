@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolas Delacrétaz</title>
+<meta name="description" content="Nicolas Delacrétaz, images de synthèse et visualisation architecturale, Lausanne.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nicolas Delacrétaz">
+<meta property="og:description" content="Nicolas Delacrétaz, images de synthèse et visualisation architecturale, Lausanne.">
+<meta property="og:url" content="https://nicodela.com/">
+<meta property="og:image" content="https://nicodela.com/img/full/001-vue-exterieure.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1500">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<!-- Réglages (tailles et durées) : généré par « build.py html », après site.css pour
+     que ses valeurs l'emportent. -->
+<link rel="stylesheet" href="assets/css/reglages.css">
+<!-- Les vignettes partent à `opacity: 0` et c'est `gallery.js` qui les révèle une à une.
+     Sans lui, personne ne poserait `is-loaded` : la grille resterait blanche. -->
+<noscript><style>.tile-front img, .tile-front video { opacity: 1; }</style></noscript>
+</head>
+<body>
+<header class="site-header">
+  <!-- Bloc de gauche : les deux liens, et sous eux la rangée des filtres. Tous deux ne font
+       qu'une seule case de la grille à trois colonnes — celle de gauche —, si bien que la rangée
+       des filtres se pose juste sous le trait du lien actif au lieu d'attendre le bas de la bande
+       du logo. Ce qui pend sous les liens fait grandir l'en-tête ; les liens, eux, ne bougent pas
+       (voir `.header-left`, feuille de style). Sur écran étroit, le bloc se dissout
+       (`display: contents`) et les deux liens reprennent chacun un côté du logo. -->
+  <div class="header-left">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="./" class="is-active">Mon travail</a>
+      <a href="contact.html" class="">Contact</a>
+      <!-- Trait du lien actif. Il vient après les deux liens : c'est une décoration, elle n'a
+           rien à dire à un lecteur d'écran, et `nav.js` lui donne la position et la largeur du
+           lien actif — au chargement, au redimensionnement et à chaque fois qu'il change. -->
+      <span class="nav-bar" aria-hidden="true"></span>
+      <!-- Sans JavaScript, le trait reste large de zéro : personne ne le dimensionne, et le lien
+           actif ne serait plus signalé du tout sur ordinateur (sur écran étroit, le soulignement
+           de texte est déjà de retour). On rend donc le soulignement d'origine et on retire le
+           trait, qui n'a plus rien à dire. -->
+      <noscript><style>.site-nav a.is-active { text-decoration: underline; text-underline-offset: 5px; } .nav-bar { display: none; }</style></noscript>
+    </nav>
+    <!-- Rangée des filtres, juste sous les deux liens : `build_html` ne la pose que sur
+         l'accueil, seule page qui ait une galerie à filtrer, et laisse le marqueur vide ailleurs.
+         Elle vient avec sa rangée de sous-étiquettes, repliée tant que « Image » n'est pas
+         choisi. -->
+    
+  </div>
+  <a href="./" class="site-logo" aria-label="Nicolas Delacrétaz, retour à l'accueil">
+    <img class="logo-fallback" src="assets/logo/logo-poster.png" data-gif="assets/logo/logo.gif" width="124" height="124" alt="">
+    <noscript><style>.logo-fallback[data-gif]{display:none}</style><img class="logo-fallback" src="assets/logo/logo.gif" width="124" height="124" alt=""></noscript>
+    <canvas id="logo" width="180" height="180" aria-hidden="true" hidden></canvas>
+  </a>
+</header>
+
+<main class="gallery">
+  <div class="grid" id="grid" role="list">
+<div class="cell" data-index="0" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/001-vue-exterieure.webp" data-full-jpg="img/full/001-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/001-vue-exterieure.webp">
+        <img src="img/thumb/001-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="eager" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="1" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/005-vue-exterieure.webp" data-full-jpg="img/full/005-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/005-vue-exterieure.webp">
+        <img src="img/thumb/005-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="eager" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="2" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/006-vue-aerienne.webp" data-full-jpg="img/full/006-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/006-vue-aerienne.webp">
+        <img src="img/thumb/006-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="eager" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="3" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/007-vue-interieure.webp" data-full-jpg="img/full/007-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/007-vue-interieure.webp">
+        <img src="img/thumb/007-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="4" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/008-vue-aerienne.webp" data-full-jpg="img/full/008-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/008-vue-aerienne.webp">
+        <img src="img/thumb/008-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="5" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/009-vue-exterieure.webp" data-full-jpg="img/full/009-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/009-vue-exterieure.webp">
+        <img src="img/thumb/009-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="6" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/010-vue-exterieure.webp" data-full-jpg="img/full/010-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/010-vue-exterieure.webp">
+        <img src="img/thumb/010-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="7" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/011-vue-aerienne.webp" data-full-jpg="img/full/011-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/011-vue-aerienne.webp">
+        <img src="img/thumb/011-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="8" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/012-vue-exterieure.webp" data-full-jpg="img/full/012-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/012-vue-exterieure.webp">
+        <img src="img/thumb/012-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="9" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/013-vue-aerienne.webp" data-full-jpg="img/full/013-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1126" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/013-vue-aerienne.webp">
+        <img src="img/thumb/013-vue-aerienne.jpg" width="800" height="450" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="10" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/014-vue-exterieure.webp" data-full-jpg="img/full/014-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/014-vue-exterieure.webp">
+        <img src="img/thumb/014-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="11" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/015-vue-interieure.webp" data-full-jpg="img/full/015-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/015-vue-interieure.webp">
+        <img src="img/thumb/015-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="12" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/016-vue-exterieure.webp" data-full-jpg="img/full/016-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/016-vue-exterieure.webp">
+        <img src="img/thumb/016-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="13" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/017-vue-exterieure.webp" data-full-jpg="img/full/017-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/017-vue-exterieure.webp">
+        <img src="img/thumb/017-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="14" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/018-vue-exterieure.webp" data-full-jpg="img/full/018-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/018-vue-exterieure.webp">
+        <img src="img/thumb/018-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="15" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/019-vue-aerienne.webp" data-full-jpg="img/full/019-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/019-vue-aerienne.webp">
+        <img src="img/thumb/019-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="16" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/020-vue-exterieure.webp" data-full-jpg="img/full/020-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/020-vue-exterieure.webp">
+        <img src="img/thumb/020-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="17" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/021-vue-aerienne.webp" data-full-jpg="img/full/021-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/021-vue-aerienne.webp">
+        <img src="img/thumb/021-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="18" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/022-vue-interieure.webp" data-full-jpg="img/full/022-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/022-vue-interieure.webp">
+        <img src="img/thumb/022-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="19" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/023-vue-exterieure.webp" data-full-jpg="img/full/023-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1409" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 564">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/023-vue-exterieure.webp">
+        <img src="img/thumb/023-vue-exterieure.jpg" width="800" height="564" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="20" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/024-vue-interieure.webp" data-full-jpg="img/full/024-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1499" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/024-vue-interieure.webp">
+        <img src="img/thumb/024-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="21" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/025-vue-exterieure.webp" data-full-jpg="img/full/025-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/025-vue-exterieure.webp">
+        <img src="img/thumb/025-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="22" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/026-vue-exterieure.webp" data-full-jpg="img/full/026-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/026-vue-exterieure.webp">
+        <img src="img/thumb/026-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="23" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/027-vue-interieure.webp" data-full-jpg="img/full/027-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/027-vue-interieure.webp">
+        <img src="img/thumb/027-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="24" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/028-vue-exterieure.webp" data-full-jpg="img/full/028-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/028-vue-exterieure.webp">
+        <img src="img/thumb/028-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="25" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/029-vue-exterieure.webp" data-full-jpg="img/full/029-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/029-vue-exterieure.webp">
+        <img src="img/thumb/029-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="26" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/030-vue-interieure.webp" data-full-jpg="img/full/030-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/030-vue-interieure.webp">
+        <img src="img/thumb/030-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="27" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/031-vue-exterieure.webp" data-full-jpg="img/full/031-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/031-vue-exterieure.webp">
+        <img src="img/thumb/031-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="28" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/032-vue-interieure.webp" data-full-jpg="img/full/032-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/032-vue-interieure.webp">
+        <img src="img/thumb/032-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="29" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/033-vue-exterieure.webp" data-full-jpg="img/full/033-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/033-vue-exterieure.webp">
+        <img src="img/thumb/033-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="30" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/034-vue-interieure.webp" data-full-jpg="img/full/034-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/034-vue-interieure.webp">
+        <img src="img/thumb/034-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="31" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/035-vue-aerienne.webp" data-full-jpg="img/full/035-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/035-vue-aerienne.webp">
+        <img src="img/thumb/035-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="32" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/036-vue-interieure.webp" data-full-jpg="img/full/036-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/036-vue-interieure.webp">
+        <img src="img/thumb/036-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="33" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/037-vue-exterieure.webp" data-full-jpg="img/full/037-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/037-vue-exterieure.webp">
+        <img src="img/thumb/037-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="34" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/038-vue-interieure.webp" data-full-jpg="img/full/038-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/038-vue-interieure.webp">
+        <img src="img/thumb/038-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="35" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/039-vue-exterieure.webp" data-full-jpg="img/full/039-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/039-vue-exterieure.webp">
+        <img src="img/thumb/039-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="36" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/040-vue-interieure.webp" data-full-jpg="img/full/040-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/040-vue-interieure.webp">
+        <img src="img/thumb/040-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="37" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/041-vue-exterieure.webp" data-full-jpg="img/full/041-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1334" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 533">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/041-vue-exterieure.webp">
+        <img src="img/thumb/041-vue-exterieure.jpg" width="800" height="533" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="38" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/042-vue-aerienne.webp" data-full-jpg="img/full/042-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1334" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 533">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/042-vue-aerienne.webp">
+        <img src="img/thumb/042-vue-aerienne.jpg" width="800" height="533" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="39" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/043-vue-interieure.webp" data-full-jpg="img/full/043-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/043-vue-interieure.webp">
+        <img src="img/thumb/043-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="40" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/044-vue-exterieure.webp" data-full-jpg="img/full/044-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/044-vue-exterieure.webp">
+        <img src="img/thumb/044-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="41" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/045-vue-aerienne.webp" data-full-jpg="img/full/045-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1159" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 464">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/045-vue-aerienne.webp">
+        <img src="img/thumb/045-vue-aerienne.jpg" width="800" height="464" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="42" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/046-vue-exterieure.webp" data-full-jpg="img/full/046-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1645" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 658">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/046-vue-exterieure.webp">
+        <img src="img/thumb/046-vue-exterieure.jpg" width="800" height="658" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="43" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/047-vue-exterieure.webp" data-full-jpg="img/full/047-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/047-vue-exterieure.webp">
+        <img src="img/thumb/047-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="44" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/048-vue-interieure.webp" data-full-jpg="img/full/048-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/048-vue-interieure.webp">
+        <img src="img/thumb/048-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="45" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/049-vue-interieure.webp" data-full-jpg="img/full/049-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/049-vue-interieure.webp">
+        <img src="img/thumb/049-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="46" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/050-vue-exterieure.webp" data-full-jpg="img/full/050-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/050-vue-exterieure.webp">
+        <img src="img/thumb/050-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="47" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/051-vue-interieure.webp" data-full-jpg="img/full/051-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/051-vue-interieure.webp">
+        <img src="img/thumb/051-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="48" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/052-vue-interieure.webp" data-full-jpg="img/full/052-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/052-vue-interieure.webp">
+        <img src="img/thumb/052-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="49" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/053-vue-aerienne.webp" data-full-jpg="img/full/053-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1150" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 460">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/053-vue-aerienne.webp">
+        <img src="img/thumb/053-vue-aerienne.jpg" width="800" height="460" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="50" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/054-vue-aerienne.webp" data-full-jpg="img/full/054-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1177" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 471">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/054-vue-aerienne.webp">
+        <img src="img/thumb/054-vue-aerienne.jpg" width="800" height="471" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="51" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/055-vue-exterieure.webp" data-full-jpg="img/full/055-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/055-vue-exterieure.webp">
+        <img src="img/thumb/055-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="52" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/056-vue-exterieure.webp" data-full-jpg="img/full/056-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/056-vue-exterieure.webp">
+        <img src="img/thumb/056-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="53" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/057-vue-exterieure.webp" data-full-jpg="img/full/057-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/057-vue-exterieure.webp">
+        <img src="img/thumb/057-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="54" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/058-vue-exterieure.webp" data-full-jpg="img/full/058-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/058-vue-exterieure.webp">
+        <img src="img/thumb/058-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="55" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/059-vue-interieure.webp" data-full-jpg="img/full/059-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/059-vue-interieure.webp">
+        <img src="img/thumb/059-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="56" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/060-vue-interieure.webp" data-full-jpg="img/full/060-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/060-vue-interieure.webp">
+        <img src="img/thumb/060-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="57" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/061-vue-exterieure.webp" data-full-jpg="img/full/061-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/061-vue-exterieure.webp">
+        <img src="img/thumb/061-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="58" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/062-vue-interieure.webp" data-full-jpg="img/full/062-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/062-vue-interieure.webp">
+        <img src="img/thumb/062-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="59" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/063-vue-exterieure.webp" data-full-jpg="img/full/063-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/063-vue-exterieure.webp">
+        <img src="img/thumb/063-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="60" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/064-vue-interieure.webp" data-full-jpg="img/full/064-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/064-vue-interieure.webp">
+        <img src="img/thumb/064-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="61" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/065-vue-exterieure.webp" data-full-jpg="img/full/065-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/065-vue-exterieure.webp">
+        <img src="img/thumb/065-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="62" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/066-vue-interieure.webp" data-full-jpg="img/full/066-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/066-vue-interieure.webp">
+        <img src="img/thumb/066-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="63" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/067-vue-exterieure.webp" data-full-jpg="img/full/067-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/067-vue-exterieure.webp">
+        <img src="img/thumb/067-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="64" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/068-vue-exterieure.webp" data-full-jpg="img/full/068-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/068-vue-exterieure.webp">
+        <img src="img/thumb/068-vue-exterieure.jpg" width="800" height="600" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="65" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/069-vue-interieure.webp" data-full-jpg="img/full/069-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/069-vue-interieure.webp">
+        <img src="img/thumb/069-vue-interieure.jpg" width="800" height="600" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="66" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/070-vue-exterieure.webp" data-full-jpg="img/full/070-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/070-vue-exterieure.webp">
+        <img src="img/thumb/070-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="67" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/071-vue-exterieure.webp" data-full-jpg="img/full/071-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/071-vue-exterieure.webp">
+        <img src="img/thumb/071-vue-exterieure.jpg" width="800" height="450" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="68" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/072-vue-aerienne.webp" data-full-jpg="img/full/072-vue-aerienne.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1500" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue aérienne" style="--ar: 800 / 600">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/072-vue-aerienne.webp">
+        <img src="img/thumb/072-vue-aerienne.jpg" width="800" height="600" alt="Vue aérienne" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="69" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/073-vue-interieure.webp" data-full-jpg="img/full/073-vue-interieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1125" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue intérieure" style="--ar: 800 / 450">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/073-vue-interieure.webp">
+        <img src="img/thumb/073-vue-interieure.jpg" width="800" height="450" alt="Vue intérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+<div class="cell" data-index="70" role="listitem">
+  <div class="tile" data-kind="image" data-full-webp="img/full/074-vue-exterieure.webp" data-full-jpg="img/full/074-vue-exterieure.jpg" data-zoom-webm="" data-zoom-mp4="" data-pano-grid="" data-pano-full="" data-module="" data-w="2000" data-h="1334" data-caption="" data-logo="">
+    <button class="tile-front" type="button" aria-label="Agrandir : Vue extérieure" style="--ar: 800 / 533">
+      <picture>
+        <source type="image/webp" srcset="img/thumb/074-vue-exterieure.webp">
+        <img src="img/thumb/074-vue-exterieure.jpg" width="800" height="533" alt="Vue extérieure" loading="lazy" decoding="async">
+      </picture>
+    </button>
+  </div>
+</div>
+  </div>
+</main>
+<div class="zoom-backdrop" id="zoom-backdrop" hidden></div>
+<button class="to-top" type="button" aria-label="Remonter" hidden>↑</button>
+<!-- Le formulaire de contact vit ici, inerte, jusqu'à ce que `gallery.js` le clone au dos de la
+     tuile retournée : un <template> n'est ni rendu, ni soumis, ni parcouru par les lecteurs d'écran. -->
+<template id="contact-form-template">
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-key="b94933cb-7bd0-41ba-9986-ee2c4ccb145d">
+  <input type="hidden" name="access_key" value="b94933cb-7bd0-41ba-9986-ee2c4ccb145d">
+  <input type="hidden" name="subject" value="Contact nicodela.com">
+  <input type="hidden" name="redirect" value="https://nicodela.com/merci.html">
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  <!-- Seuls l'adresse et le message sont exigés : un visiteur qui écrit depuis son adresse
+       professionnelle n'a rien d'autre à donner pour qu'on lui réponde. Les champs facultatifs ne
+       portent donc aucune marque — c'est « (obligatoire) » qui signale l'exception. -->
+  <!-- Un seul champ pour le nom, dans l'ordre où l'on se présente : « Nom / Prénom ». Deux
+       champs pour la même chose obligeaient à choisir où écrire — et la moitié des visiteurs
+       n'en remplissait qu'un. `autocomplete="name"` : le navigateur y verse le nom complet. -->
+  <label>Nom / Prénom
+    <input type="text" name="nom" autocomplete="name"></label>
+
+  <label>Entreprise
+    <input type="text" name="entreprise" autocomplete="organization"></label>
+
+  <label>E-mail <span class="req">(obligatoire)</span>
+    <input type="email" name="email" required autocomplete="email"></label>
+
+  <label>Téléphone
+    <input type="tel" name="telephone" autocomplete="tel"></label>
+
+  <!-- Quatre lignes pour commencer : le champ grandit ensuite avec ce qu'on y écrit
+       (`contact.js`), plutôt que de faire défiler un texte que l'on vient de taper. -->
+  <label>Message <span class="req">(obligatoire)</span>
+    <textarea name="message" rows="4" required></textarea></label>
+
+  <button type="submit" class="btn btn-submit">Envoyer</button>
+  <p class="form-error" hidden>L'envoi n'a pas abouti. Écrivez-moi directement à <a href="mailto:info@nicodela.com">info@nicodela.com</a>.</p>
+</form>
+<p class="form-success" hidden>Merci, votre message est envoyé. Je vous réponds rapidement.</p>
+
+</template>
+<!-- Les scripts de l'accueil : ils dépendent de ce que le site publie (réglage
+     « publication »), et c'est `buildlib.publication` qui en tient l'ordre et les raisons. -->
+<!-- La barre du lien actif : posée avant les autres modules, pour qu'elle soit en place
+     dès que « Contact » ouvre sa carte sur l'accueil. -->
+<script type="module" src="assets/js/nav.js"></script>
+<script type="module" src="assets/js/logo.js"></script>
+<script type="module" src="assets/js/to-top.js"></script>
+<script type="module" src="assets/js/masonry.js"></script>
+<script type="module" src="assets/js/gallery.js"></script>
+</body>
+</html>
