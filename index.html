@@ -774,7 +774,6 @@
   </div>
 </main>
 <div class="zoom-backdrop" id="zoom-backdrop" hidden></div>
-<button class="to-top" type="button" aria-label="Remonter" hidden>↑</button>
 <!-- Le formulaire de contact vit ici, inerte, jusqu'à ce que `gallery.js` le clone au dos de la
      tuile retournée : un <template> n'est ni rendu, ni soumis, ni parcouru par les lecteurs d'écran. -->
 <template id="contact-form-template">
@@ -819,8 +818,12 @@
      dès que « Contact » ouvre sa carte sur l'accueil. -->
 <script type="module" src="assets/js/nav.js"></script>
 <script type="module" src="assets/js/logo.js"></script>
-<script type="module" src="assets/js/to-top.js"></script>
+<!-- Les deux liens de l'en-tête deviennent des pastilles flottantes quand il quitte la fenêtre. -->
+<script type="module" src="assets/js/nav-float.js"></script>
 <script type="module" src="assets/js/masonry.js"></script>
 <script type="module" src="assets/js/gallery.js"></script>
+<!-- La veille : diaporama plein écran après un temps sans geste. Après la galerie, dont elle
+     emprunte le voile et l'effacement de la grille ; elle ne s'envole que si rien n'est ouvert. -->
+<script type="module" src="assets/js/veille.js"></script>
 </body>
 </html>
